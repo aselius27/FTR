@@ -18,12 +18,12 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+FTRapp ftr = new FTRapp();
    // TextView totalTextView;
     EditText calories; //calories
 int meal = 1;
     boolean nC = false;
-    String Calories;
+    int Calories;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,19 +56,23 @@ int meal = 1;
             meal = 3;
         }
         calories = (EditText) findViewById(R.id.cals);
-        Calories =  calories.toString();
+        Calories = Integer.parseInt(calories.toString());
         CheckBox noCal = (CheckBox) findViewById(R.id.NoCal); //no calorie limit
 
         if(noCal.isChecked()) nC = true;
         Button next = (Button) findViewById(R.id.NextButton);
+        ftr.setCalories(Calories);
+        ftr.setNoCal(nC);
+        ftr.setMeal(meal);
 
         next.setOnClickListener(new View.OnClickListener(){
+
             @Override
                     public void onClick(View view) {
-                Intent dataPass = new Intent(MainActivity.this, Main2Activity.class);
+                /*Intent dataPass = new Intent(MainActivity.this, Main2Activity.class);
                 dataPass.putExtra("meal", meal);
                 dataPass.putExtra("calories", Calories);
-                dataPass.putExtra("noCal", nC);
+                dataPass.putExtra("noCal", nC);*/
                 startActivity(new Intent(MainActivity.this, Main2Activity.class));
             }
 

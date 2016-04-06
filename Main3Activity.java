@@ -10,8 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 
-public class Main3Activity extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class Main3Activity extends AppCompatActivity {
+FTRapp ftr = new FTRapp();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,13 +21,16 @@ public class Main3Activity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        CheckBox Vegetarian = (CheckBox) findViewById(R.id.vegetarian);
-        CheckBox diabetic = (CheckBox) findViewById(R.id.diabetic);
-        CheckBox GF = (CheckBox) findViewById(R.id.GF);
-        CheckBox Nut = (CheckBox) findViewById(R.id.NF);
-        CheckBox Religion = (CheckBox) findViewById(R.id.religion);
-        CheckBox LS = (CheckBox) findViewById(R.id.LS);
-        CheckBox HF = (CheckBox) findViewById(R.id.HF);
+        ArrayList<String> restrictions = new ArrayList<String>();
+
+        CheckBox Vegetarian = (CheckBox) findViewById(R.id.vegetarian); if(Vegetarian.isChecked()) restrictions.add("vegetarian");
+        CheckBox diabetic = (CheckBox) findViewById(R.id.diabetic); if(diabetic.isChecked()) restrictions.add("diabetic");
+        CheckBox GF = (CheckBox) findViewById(R.id.GF); if(GF.isChecked()) restrictions.add("gluten free");
+        CheckBox Nut = (CheckBox) findViewById(R.id.NF); if(Nut.isChecked()) restrictions.add("nut free");
+        CheckBox Religion = (CheckBox) findViewById(R.id.religion); if(Religion.isChecked()) restrictions.add("religion");
+        CheckBox LS = (CheckBox) findViewById(R.id.LS); if(LS.isChecked()) restrictions.add("Low Salt");
+        CheckBox HF = (CheckBox) findViewById(R.id.HF); if(HF.isChecked()) restrictions.add("High Fiber");
+ftr.setRestrictions(restrictions);
 
         Button finish = (Button) findViewById(R.id.fin);
 
