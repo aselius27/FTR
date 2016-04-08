@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.aseli_000.ftr">
+    package="com.example.aseli_000.foodtorecipe">
 
     <application
+        android:name=".GlobalVars"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,13 +24,13 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Main3Activity"
-            android:label="@string/title_activity_main3"
+            android:name=".Main22Activity"
+            android:label="@string/title_activity_main22"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Main4Activity"
-            android:label="@string/title_activity_main4"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".Main23Activity"
+            android:label="@string/title_activity_main23"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
