@@ -9,9 +9,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.aseli_000.ftr.MainActivity"
-    tools:showIn="@layout/activity_main"
-    android:background="#eefbff">
+    tools:context="com.example.aseli_000.foodtorecipe.MainActivity"
+    tools:showIn="@layout/activity_main">
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,23 +18,37 @@
         android:text="Food To Recipe"
         android:textSize="40dp"
         android:textIsSelectable="false"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:textColor="#2403fc"
         android:typeface="serif"
-        android:id="@+id/textView2" />
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="What meal is being prepared?"
-        android:id="@+id/textView"
-        android:layout_marginTop="23dp"
+        android:id="@+id/textView3"
         android:textColor="#0004ff"
         android:typeface="serif"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="41dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/cals"
+        android:hint="Enter Calories"
+        android:textAlignment="center"
+        android:textColor="#FF0004FF"
+        android:layout_marginBottom="87dp"
+        android:layout_above="@+id/NextButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -44,39 +57,13 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="What is your calorie limit?"
-        android:id="@+id/textView3"
-        android:layout_marginTop="117dp"
+        android:id="@+id/textView4"
         android:textStyle="bold"
         android:textColor="#FF0004FF"
         android:textSize="20dp"
-        android:layout_below="@+id/textView"
-        android:layout_alignRight="@+id/NextButton"
-        android:layout_alignEnd="@+id/NextButton" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/cals"
-        android:layout_alignParentStart="true"
-        android:hint="Enter Calories"
-        android:textAlignment="center"
-        android:layout_below="@+id/textView3"
-        android:layout_alignRight="@+id/NextButton"
-        android:textColor="#FF0004FF" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="No Calorie Limit"
-        android:id="@+id/NoCal"
-        android:layout_alignParentStart="true"
-        android:checked="false"
-        android:textStyle="bold"
-        android:buttonTint="#FF0004FF"
-        android:layout_below="@+id/cals"
-        android:layout_alignRight="@+id/NextButton" />
+        android:layout_above="@+id/cals"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -88,18 +75,18 @@
         android:textStyle="bold"
         android:typeface="sans"
         android:enabled="true"
-        android:layout_marginBottom="58dp"
+        android:layout_marginBottom="57dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="false"
         android:id="@+id/meals"
-        android:layout_alignParentEnd="true">
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/textView4">
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -108,7 +95,10 @@
             android:id="@+id/bkfst"
             android:checked="false"
             android:buttonTint="#FF0004FF"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_below="@+id/textView3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -127,6 +117,20 @@
             android:checked="false"
             android:buttonTint="#FF0004FF"
             android:textStyle="bold" />
+
     </RadioGroup>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Calorie Limit"
+        android:id="@+id/NoCal"
+        android:checked="false"
+        android:textStyle="bold"
+        android:buttonTint="#FF0004FF"
+        android:layout_alignTop="@+id/cals"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="58dp" />
 
 </RelativeLayout>
